@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { fetchUsersList } from "../redux/actions/userActions";
-import ApiLoading from "../components/StartPage/ApiLoading";
-import ApiError from "../components/StartPage/ApiError";
-import UsersList from "../components/StartPage/UsersList";
-import SelectedUsersList from "../components/StartPage/SelectedUsersList";
+import { fetchUsersList } from "../../redux/actions/userActions";
+import ApiLoading from "../../components/StartPage/ApiLoading";
+import ApiError from "../../components/StartPage/ApiError";
+import UsersList from "../../components/StartPage/UsersList";
+import SelectedUsersList from "../../components/StartPage/SelectedUsersList";
 import style from "./StartPage.module.css";
 
 /**

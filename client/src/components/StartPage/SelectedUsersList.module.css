@@ -1,0 +1,11 @@
+.startBtn {
+  width: 70% !important;
+  margin: 5px 10px 5px 10px !important;
+  background: #354ff9 !important;
+  color: white !important;
+}
+
+.startBtn:hover {
+  background: #021dce !important;
+  color: white !important;
+}

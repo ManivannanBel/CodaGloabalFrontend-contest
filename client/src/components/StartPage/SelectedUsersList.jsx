@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Avatar from "@material-ui/core/Avatar";
+import SelectedUserListItem from "./SelectedUserListItem";
+import { Button } from "@material-ui/core";
+import style from "./SelectedUsersList.module.css";
+import { Link } from "react-router-dom";
 
 /**
  * Component to render the selected users on the left side of the page
@@ -36,14 +36,7 @@ function SelectedUsersList(props) {
         <Table>
           <TableBody>
             {selectedUsers.map(user => (
-              <TableRow key={user.Name}>
-                <TableCell>
-                  <Avatar alt={user.Name} src={user["Profile Image"]} />
-                  <TableCell>{user.Name}</TableCell>
-                  <TableCell>{user.Bet}</TableCell>
-                </TableCell>
-                <TableCell>{user.Price}</TableCell>
-              </TableRow>
+              <SelectedUserListItem key={user.Name} user={user} />
             ))}
           </TableBody>
         </Table>
@@ -53,8 +46,15 @@ function SelectedUsersList(props) {
 
   return (
     <div>
-      <h4>Selected 9</h4>
+      <h4 style={{ paddingLeft: "10px" }}>Selected 9</h4>
       <TableContainer>{renderSelectedUsers()}</TableContainer>
+      <div style={{ width: "100%" }}>
+        {selectedUsers.length > 0 && (
+          <Link to="/game" style={{ textDecoration: "unset" }}>
+            <Button className={style.startBtn}>Start</Button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
