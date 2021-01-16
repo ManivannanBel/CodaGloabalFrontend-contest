@@ -1,0 +1,36 @@
+.wrpr {
+  padding: 5px 20px 5px 20px;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.avt {
+  margin: auto;
+}
+
+.winLbl {
+  padding-top: 5px;
+  background: #2ac200;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.loseLbl {
+  padding-top: 5px;
+  background: #de0b00;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dtlWrpr {
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

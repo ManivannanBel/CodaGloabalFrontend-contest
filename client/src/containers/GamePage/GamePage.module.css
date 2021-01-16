@@ -1,0 +1,12 @@
+.oppNum {
+  text-align: center;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  background: orange;
+  border-radius: 50%;
+}
+.oppNumWrpr {
+  margin-top: 20px;
+  width: 100%;
+}

@@ -97,8 +97,8 @@ function UsersList(props) {
   };
 
   return (
-    <div>
-      <h3>Select playing 9</h3>
+    <div className={style.wrpr}>
+      <h3 style={{ paddingLeft: "5px" }}>Select playing 9</h3>
       <TableContainer>{renderTable()}</TableContainer>
     </div>
   );
