@@ -29,7 +29,7 @@ function StartPage(props) {
    * update users state from the redux store
    */
   useEffect(() => {
-    if (props.usersList) {
+    if (props.usersList.length > 0) {
       setIsLoading(false);
       setUsers(props.usersList);
     }

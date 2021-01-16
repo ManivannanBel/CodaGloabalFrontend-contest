@@ -16,7 +16,7 @@ export const fetchUsersList = () => async dispatch => {
     });
   } catch (err) {
     console.log(err);
-    if (err.response) {
+    if (err) {
       dispatch({
         type: FETCH_USER_LIST_ERROR,
         payload: err.response

@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 import style from "./GamePage.module.css";
 import ResultList from "../../components/GamePage/ResultList";
 import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 /**
  * This component displays the game page where the winners will be displayed
  *
  */
 function GamePage(props) {
+  const history = useHistory();
+
   const [selectedUsers, setSelectedUsers] = useState([]);
 
   /**
@@ -17,20 +19,18 @@ function GamePage(props) {
    */
   const [opposingNumber, setOpposingNumber] = useState(null);
 
-  //   useEffect(() => {
-  //     if (opposingNumber) {
-  //     }
-  //   }, [opposingNumber]);
-
   /**
    * update selectUsers state from the store and generate the opposing number
    *
    */
   useEffect(() => {
-    if (props.selectedUsers) {
+    if (props.selectedUsers && Object.keys(props.selectedUsers).length === 9) {
       setSelectedUsers(Object.values(props.selectedUsers));
 
       setOpposingNumber(Math.floor(Math.random() * (9 - 1) + 1));
+    } else {
+      //To prevent user from directly entering the /game page without filling the first page
+      history.push("/");
     }
   }, [props.selectedUsers]);
 
