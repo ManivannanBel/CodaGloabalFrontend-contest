@@ -1,16 +1,20 @@
 import "./App.css";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import StartPage from "./containers/StartPage";
 
+/**
+ *
+ */
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <h1>App ready</h1>
-        <h3>Redux setup</h3>
-        <h3>Router setup</h3>
-        <h3>Express server setup</h3>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact strict path="/" component={StartPage} />
+        </Switch>
+      </Router>
     </Provider>
   );
 }
