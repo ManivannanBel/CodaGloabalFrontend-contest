@@ -60,13 +60,31 @@ function SelectedUsersList(props) {
           <h4 style={{ paddingLeft: "10px" }}>Selected 9</h4>
           <TableContainer>{renderSelectedUsers()}</TableContainer>
           <div style={{ width: "100%" }}>
-            {selectedUsers.length > 0 && (
-              <Link to="/game" style={{ textDecoration: "unset" }}>
-                <Button className={style.startBtn}>Start</Button>
-              </Link>
-            )}
+            {renderWarning()}
+            {/* {selectedUsers.length > 0 && (
+              
+            )} */}
           </div>
         </React.Fragment>
+      );
+    }
+  };
+
+  /**
+   * This helper function will display a warning message if the number of selected users are not equal to 9
+   */
+  const renderWarning = () => {
+    if (selectedUsers.length !== 9) {
+      return (
+        <h5 style={{ color: "red", paddingLeft: "5px", paddingRight: "5px" }}>
+          9 users should be selected to play
+        </h5>
+      );
+    } else {
+      return (
+        <Link to="/game" style={{ textDecoration: "unset" }}>
+          <Button className={style.startBtn}>Start</Button>
+        </Link>
       );
     }
   };

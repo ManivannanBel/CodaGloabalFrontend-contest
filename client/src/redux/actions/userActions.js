@@ -9,7 +9,7 @@ export const fetchUsersList = () => async dispatch => {
     const result = await axios.get(
       "https://s3-ap-southeast-1.amazonaws.com/he-public-data/bets7747a43.json"
     );
-    console.log(result.data);
+    //console.log(result.data);
     dispatch({
       type: FETCH_USERS_LIST,
       payload: result.data

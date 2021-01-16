@@ -27,7 +27,7 @@ function WinningUserListItem(props) {
    *
    */
   const renderPrice = () => {
-    if (opposingNumber == user.Bet) {
+    if (opposingNumber === parseInt(user.Bet)) {
       return (
         <div>
           <AttachMoneyIcon />
